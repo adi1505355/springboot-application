@@ -1,0 +1,682 @@
+ Get data into celonis
+1)	A Data Engineer is defining a perspective but gets a warning that there is a cyclical relationship. How can the Data Engineer fix the issue with the affected objects? 
+A. Use an include linking strategy 
+B. Use a default Event Log 
+C1. Use an embed linking sstrategy 
+
+2)	A Data Engineer has compiled a final list of tables to extract from source systems for a custom process. What does the Data Engineer need to know for each table to perform extensive table extractions? Select THREE options. 
+A.	1Which columns to extract 
+B.	Which translation tables to apply 
+C.	Which task templates to use 
+D.	1 Which filters to apply 
+E.	1Which columns to pseudonymize 
+
+3)	Which statements are true about Data Job transformations and Replication Cockpit transformations? Select TWO options.  
+A.	1Replication Cockpit real-time transformations insert new and updated records into tables 
+B.	1Data Job full transformations delete and recreate tables 
+C.	Data Jobs can only handle delta transformations 
+D.	Replication Cockpit transformations can only handle full transformations 
+
+4)	  What is the top level structural object in Data Integration?
+A.	Data Model
+B.	1Data Pool 
+C.	Data Pipeline 
+5)  A business expert believes the number of cases in the Data Model is lower than expected. What can the Data Engineer do to verify this claim? Select TWO options. 
+A.	1Check the number of cases in the source system 
+B.	1Check filters and joins in the Data Job tasks 
+C.	Add a "Distinct" to all of the SELECT statements in transformations 
+D.	Check the foreign key links of the Data Model 
+6) What are the advantages of trigger-based schedules? 
+A.	To trigger schedules based on Action Flows 
+B.	1To reduce the time gap between two sequential schedules 
+C.	To continuously run full Data Job extractions 
+7)  What is the purpose of re-creating raw tables with Data Job transformations? Select TWO options. 
+A.	To create copies of raw tables for security reasons 
+B.	1To add extra columns where necessary 
+C.	To adjust the calculations of throughput times 
+D.	1To adjust the filtering and selection of data needed for the Data Model 
+8) How are changes to an object's attributes recorded, and what information is included in the record of a change? 
+A.	1Object changes are captured in change tables with a schema that includes old and new values. 
+B.	Object changes are captured using relationship tables and include the values before and after the events. 
+C.	Object changes are captured directly on object tables and include the previous and latest values. 
+9)  A business user wants to see the interplay of two related processes in the Celonis Analysis. How can the Data Engineer set up the Data Pipeline? 
+A.	1With one extraction of all required tables, two activity tables and the eventlog merge function
+B.	With two Data Pools with one activity table each, and both with the eventlog merge function on at Data Model load. 
+C.	With separate Data Pools and Data Models, and a merging of Data Models in the Studio 
+10) A project requires the Data Engineer to set up two SAP O2C data models—one operational and one analytical. How should the extraction be set up to optimize load performance? 
+A.	1Tables needed for the operational data model should be extracted in real-time 
+B.	Tables needed for the operational data model should to be extracted with Data Job Delta Extractions
+C.	All tables needed for both data models should be extracted with scheduled full loads 
+11)  What differentiates Global Data Jobs from normal Data Jobs? 
+A.	They require a data connection 
+B.	They can only perform Data Model load tasks 
+C.	1They can pull data from any schema 
+12) When doing a file upload in Data Integration, which file types can be selected? Select THREE options. 
+a.	1.json 
+b.	.txt 
+c.	1.xlsx 
+d.	.sql 
+e.	1.csv 
+13) When linking tables in a Data Model, which table should be on the “N” side of the relationship?
+a.	1The table that has many records for one record in the other table 
+b.	The table that has one record for many records in the other table 
+c.	The table that serves as the Case table in the relationship 
+14) Where should a Data Engineer first look in source systems to find the timestamps of process activities ? Select TWO options.
+a.	In master data records 
+b.	1In change logs/tables 
+c.	1In transactional tables 
+d.	In temporary tables 
+15) Which settings affect a Data Model’s table names? Select THREE options. 
+a.	1Table aliases
+b.	Process Connector names 
+c.	1Name mappings 
+d.	1Renaming target tables at extraction 
+e.	Pseudonymization 
+16)   What are two ways the Data Engineer can set up delta extractions with Data Jobs? Select TWO options. 
+a.	1Using the Change Date 
+b.	Using joins to the activity table 
+c.	1Using Consecutive Numbers 
+d.	Use a Case When clause in filters 
+17) What needs to be defined when creating an event-to-object relationship? 
+a.	2The cardinality of the relationship 
+b.	The implementer of the relationship 
+c.	2The linking strategy of the relationship this should be correct answer
+18)  When should a Data Engineer create event logs in perspectives? 
+a.	To define an event log with multiple objects and events 
+b.	To define an event log for an object with all directlyconnected events included 
+c.	1To define an event log that includes events that are not directly connected to the lead object 
+19) What is the purpose of this SQL statement? 
+a.	To create a table, count rows per partitions and keep the most frequent records 
+b.	1To identify and remove duplicate records 
+c.	To create a new table based on another and keep only records newer than a fixed date 
+20) What can Data Engineers see when looking at a query execution plan? Select THREE options. 
+a.	1Whether joins are merge or hash joins 
+b.	Suggestions on how to re-script the query
+c.	1Whether a table has statistics or not 
+d.	The runtime of the query 
+e.	1The cost of the query 
+
+21) What are two reasons for setting up real-time connections to source systems? 
+a.	1To reduce system load on source systems
+b.	To connect to multiple syssetabap tems through one data connection 
+c.	1To act on the most up-to-date data in daily business 
+d.	To copy “ready for analysis” data from source systems
+
+22)  What happens when a Data Engineer loads a Data Model with the “eventlog automerge” toggle active? 
+a.	1Activity tables are merged into one table based on the default Activity table 
+b.	All Activity tables and Case tables are merged into one another based on the default Activity and Case tables 
+c.	All tables of the same type are merged 
+23) What types of scripts can be created in the SQL editor for transformations? Select THREE options
+                       a.1Change scripts b.Event Log scripts c.1Attribute scripts d.1Relationship scripts     e.Perspective scripts 
+24) A source system has REST APIs but Celonis has no existing Extractor to quickly connect to it. How should the Data Engineer proceed to connect and extract data on an ongoing basis? 
+a.	Use File Uploads 
+b.	Use the Data Push API 
+c.	1Use the Extractor Builder 
+25) What can a Data Engineer do to improve the performance of this query? Select THREE options. 
+a.	1Use a LEFT JOIN instead of INNER JOIN 
+b.	Remove the JOIN 
+c.	1Avoid using DISTINCT 
+d.	1Replace the JOIN with a WHERE EXISTS 
+e.	Add table statistics 
+26) Which statement is true about schedules in Data Integration? 
+a.	They run individual Data Job tasks 
+b.	1They run Replication extractions and transformations 
+c.	They run entire Data Jobs
+27) When does it make sense to run a partial Data Model load? 
+a.	1To only reload certain tables affected by the extractions and transformations 
+b.	To save time by running multiple partial Data Model loads in parallel 
+c.	To temporarily hide certain tables from the Data Model if errors are encountered 
+28) What would a Data Engineer insert to generate a query execution plan for this query? 
+a.	EXPLAIN after SELECT 
+b.	EXPLAIN before CREATE TABLE 
+c.	1EXPLAIN before SELECT 
+29) What is one way a Data Engineer can customize the Celonis object types to meet specific business requirements? 
+a.	Change names of existing attributes 
+b.	1Add new attributes on Celonis objects 
+c.	Remove existing attributes from objects 
+30) How can a Data Engineer backup the work in Data Integration and revert changes if needed? 
+a.	1By working with Data Pool versions 
+b.	By exporting data connections to Celonis’ dedicated SFTP server 
+c.	By scheduling a regular backup of all Data Pools in Admin & Settings 
+31) Which tables should a Data Engineer prioritize for Delta extractions with the Replication Cockpit? Select TWO options. 
+a.	1Metadata tables 
+b.	1Master data tables 
+c.	Case table 
+d.	Tables with activity information 
+32) How do Replication Cockpit extractions differ from Data Job extractions? Select TWO options.
+a.	1Replication Cockpit extractions rely on Change Log tables in source systems 
+b.	1Replication Cockpit extractions rely on triggers in source systems 
+c.	Replication Cockpit extractions run on Schedules 
+d.	Replication Cockpit extractions are not real-time 
+33) A team would like to perform a one-time upload of SAP data into Celonis. How can a Data Engineer achieve this? 
+a.	With the Extractor Builder 
+b.	With the Data Push API 
+c.	1With the ABAP Generator / Upload tool 
+
+
+
+
+
+
+
+
+
+Build Analyses
+1)	An Analyst wants to configure a KPI that shows the number of cases that haved flowed through a single activity. Which option in the Visual editor helps achieve this? 
+
+A. 1Activity selection 
+B. Process flow selection 
+C. Ratio
+
+2)	In which scenario do Analysts need a variable? Select TWO options. 
+
+A. Creating a single KPI showing the average throughput time in minutes between two predefined activities. 
+B. 1Setting up a benchmarking sheet with two Process Explorers and two dropdowns to choose from. 
+C. 1Configuring a dynamic table where the business user can choose different dimensions from a dropdown. 
+D. Building a table component with one dimension and two KPIs based on multiple different tables in the data model.
+
+3)	How did the Analyst configure this Celonis Analysis chart? 
+
+   A. By configuring both KPIs on the same axis 
+  B. 1By configuring the KPIs on two different axes 
+  C. By configuring two dimensions on the same axis
+
+4)	A business user needs access to all Analyses in a single Package. What’s the most time-efficient way to grant this permission?
+
+ A. Assign the permission in Admin & Settings 
+B. 1Assign permission to the user at Package-level 
+C. Assign permission to the user for each Analysis
+
+5)	Which two choices are options for specifying a target process model in the Conformance sheet? (Select TWO.) 
+
+A. 1Create the target process model using the drawing tool in the Conformance sheet
+ B. 1Upload a .BPMN file of the process 
+C. Select the desired activity names from the Process Explorer 
+D. Upload a .jpg image of the process
+
+6) Before creating an Analysis for a business user, what steps should an Analyst take to ensure a user-centered analysis? 
+
+A. 1Gather user’s requirements and relevant KPIs, and determine the Analysis components needed. 
+B. Show previously created standardized Analysis templates to the user and ask which one fits their needs.
+ C. Meet with the Data Engineer to identify components needed based on the user’s known responsibilities.
+
+7) In this table, the cells in the one column are automatically displayed in one of three colors. How does an Analyst achieve this? 
+
+A. Applying conditional formatting to the entire table 
+B. Enabling threshold fields for user to specify value
+ C. 1Applying color mapping in the KPI data series
+
+8) How would Analysts access a component background filter? 
+
+A. 1With a right-click on the component: It’s stored under “Component filter”. 
+B. With a double-click on the component: It’s part of the configuration menu on the right. 
+C. With a left-click on the analysis settings in the left upper corner: It’s stored under “Load Script”.
+
+9) When working in the Code Editor, where can Analysts go for documentation/help while coding PQL? Select TWO options. 
+
+A. Academy Learning Hat in the left bottom corner 
+B. Celonis Coding Aid in the Analysis Settings 
+C. 1PQL reference in the Code Editor 
+D. 1PQL function library on the Celonis help page
+
+10) In a Celonis Analysis, when a Dropdown component is configured correctly, users can select from a list of ____. 
+A. 1Attributes in a dimension 
+B. Related dimensions 
+C. Saved formulas
+
+11) An Analyst has configured this table to display the net order value in U.S. Dollars. What does the Analyst need to do to improve how this KPI is presented? 
+
+A. Change the KPI’s formatting to “Percentage with decimals” 
+B. Set ascending sorting for the KPI column (low to high) 
+C. 1Change the KPI’s displayed name to “Net Order Value ($)”
+
+12) Business users need to filter on cases created on specific calendar dates going back 24 months. The charts in their analysis only have a breakdown of cases by weeks and months. How should the Analyst address this need? 
+
+A. 1Configure a Date Picker with case creation date 
+B. Configure a Dropdown with case creation—month 
+C. Configure a Dropdown with date picker functionality
+
+13) Select the statement that accurately reflects the relationship between a Package and Analysis assets in Celonis Studio. 
+A1. A Package can contain multiple Analysis assets built on different data models. 
+B. Analysis assets in a single Package must all be built on the same data model. 
+C. Only one Analysis can be created in every Package, but it can contain different processes.
+
+14) Business users need to be able to filter an Analysis by attributes not accessible in its charts and tables. How should the Analyst deliver this capability in the analysis? 
+A1. Add a Selection Views sheet 
+B. Enable Selection Views in Analysis Settings 
+C. Add a Date Picker to each Analysis sheet
+
+15) In Analyst wants to configure a KPI that shows the number of cases that have flowed through two specific activities, in a specific order. Which option in the Visual editor helps achieve this? 
+A. Ratio 
+B1. Process flow selection 
+C. Activity selection
+16) An Analyst is configuring the ratio of cases that started their journey with “Activity X” and ended it with “Activity Y.” Which options should the Analyst choose in the first, second, and last drop down? 
+A1. followed by, followed by, followed by 
+B. is, followed by, as 
+C. is, followed by, followed by
+
+17) How does Celonis Analysis generate the Variant Explorer and the Process Explorer? 
+A. By combining the target process model with Data Model Case Tables 
+B. Through the imported .BPMN files at implementation 
+1C. Based on data in the Data Model's Activity Table
+
+18) A business user wants to see the average time it takes for cases to flow between two specific activities in the process. Which Standard Process KPI should the Analyst select? 
+1A. Total throughput time in days 
+B. Ratio of cases with a certain process flow 
+C. Ratio of cases flowing through an activity
+
+19) A business user needs a side-by-side comparison of a specific KPI for cases that follow the target process model versus those that don’t. How can an Analyst configure this? 
+A. Add the KPI to a Conformance sheet built on the target process model. 
+1B. Add a benchmarking sheet comparing conforming and non-conforming cases. 
+C. Add a single KPI for the conforming and another one the non-conforming cases.
+
+20) How can Analysts see if a sheet background filter is applied? 
+1A. There’s a small filter icon when clicking on the sheet in edit mode. 
+B. There’s a pop-up slider in the right upper corner when clicking on the sheet in edit mode. C. There is a warning icon next to the edit button of the analysis.
+
+21) A business user wants to see the percentage of cases that have started the process with a specific activity then gone through two other specific activities. Which Standard Process KPI should the Analyst select? 
+1A. Ratio of cases with a certain process flow 
+B. Case when 
+C. Ratio of cases flowing through an activity
+
+22) In a Celonis Analysis, by default, the Standard Process KPI “Total Throughput Time in days” shows the average time cases took to move _______. 
+A. From the first activity to the second activity 
+B. Between the most two common activities 
+1C. From the first activity to last activity
+
+23) An Analyst tried to dynamically filter a table on a specific vendor stored in a variable called "vendor1" using this formula: FILTER "vendors"."name" = <%vendor1%>; Why would the formula produce an error? 
+1A. There is a syntax error. The variable has to be added with <%=vendor1%> 
+B. You can use variables in components but not in component filters. 
+C. A background filter must not end with a semicolon.
+24) A business user needs to see a table containing a list of sales organizations with the associated number of sales orders generated per each organization as well as the total value of sales orders. Which KPIs should the Analyst configure? (Select TWO options.) 
+1A. Case count (number of sales orders) 
+1B. Net value (total monetary value of sales orders) 
+C. Organization (sales orgs) 
+D. Net value (average monetary value per sales order) 
+E. Organization count (number of sales organizations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Build Action Flows
+
+1)An Action Flow should retrieve a specific customer’s sales order numbers and delivery dates from a data model. Which module should the Analyst select to achieve this? 
+A. Celonis Update Augmented Attribute 
+B. Celonis Get Tasks 
+C.1 Celonis Query Data
+
+2)Which features should an Analyst implement between the Router module and the subsequent module so that the action is routed for only specific data? 
+A1. Filters and Conditions 
+B. Filters and Versions 
+C. Filters and Joins
+
+3)What does a ConnectionError type indicate in celonis? 
+A. An aggregator module has failed to connect to the preceding Action Flow modules 
+B. An item is incorrectly mapped and does not pass the validation 
+C.1 A third-party service is unavailable
+
+4)An Action Flow with an HTTP module is required to create a new user account. What method can the Analyst use in the HTTP module in celonis? 
+A. FILTER B. GET C1. POST
+
+5)A business user would like to receive a Slack notification each time an update is made to a specified slide in a presentation deck. What can the Analyst do to achieve this in celonis? 
+A. Use a get presentation module 
+B. Use a watch presentations module 
+C1. Use a webhook module
+6)What does the Analyst use to validate incoming data when using webhooks in celonis?
+ A. Action Flow Logs B1. Data structure C. Data output
+
+7)What is the purpose of an Iterator module? 
+A. Branch the Action Flow into several routes and process the data within each route differently 
+B. Converge the Action Flow from several routes and process the data at the same time 
+C1. Split an incoming array into a series of bundles that can be processed separately in the remaining Action Flow
+
+8)What does a Break Directive enable an Analyst to do? Select TWO options. 
+A. 1To resolve incomplete executions 
+B. 1To ignore incomplete executions 
+C. To break incomplete executions into parts 
+D. To capture incomplete executions
+
+9)An Action Flow is set up to receive multiple bundles of data and then merge them into a single bundle. Which module type makes this possible in celonis? 
+A. Iterator B. Converger C1. Aggregator
+
+10)Certain data bundles from a module should be ignored and not be further processed in an Action Flow. How can the Analyst achieve this in celonis? 
+A. With a Sleep module B1. With an Ignore directive C. With a Filter
+
+11)A webhook receives data in the form of JSON payloads - what does this payload contain in celonis? 
+A1. Key value pairs B. Data structure C. Data validation
+
+12) In Action Flows, what distinguishes polling triggers from instant triggers in celonis? 
+A.1 Polling triggers run according to a predefined schedule 
+B. Polling triggers rely on scheduled webhook events 
+C. Polling triggers start running in real-time once a particular event takes place
+
+13) What type of tasks are appropriate use cases for implementing automation in celonis? 
+A. 1Tasks currently performed manually 
+B. Tasks that do not follow a set workflow 
+C. Tasks that are not repetitive
+
+14) What does an Analyst need to do prior to automating actions in on-prem systems? 
+A. Install Celonis Extractor 
+B. Install Celonis Add-on 
+C.1 Install Celonis On-prem clients / Agent
+
+15) In which HTTP modules does the Analyst allow the input of credentials? Select TWO options. 
+A1. HTTP Make a Basic Auth Request 
+B. HTTP Retrieve Headers 
+C. HTTP Get a file 
+D1. HTTP Make a Client Certificate Auth Request
+
+16) How can an Analyst automatically create new users in a database with data received through a webhook module? 
+A.1 Using an HTTP module, sending a POST request 
+B. Using the custom header items of a webhook response module 
+C. Using a watch row module of the corresponding database
+
+17) An Action Flow is set up and one of the modules has an error. The Analyst wants to stop the execution immediately when an error occurs and mark the status as error. Which error handling module achieves this? 
+A. Resume Directive 
+B. Break Directive -> chatgpt 
+C.1 Rollback Directive -> I marked this 
+
+18) An Analyst notices that some bundles in the execution of an Action Flow have not been processed in all modules as expected, however the execution status is marked as success. Which error handling module is causing this? 
+A. Retry Directive 
+B. Resume Directive 
+C1. Ignore Directive
+
+19) An Analyst must set up an Action Flow to store a calculated value for later use in more than one module. Which tool should the Data Analyst use when the formula used to calculate this value is overly complex in celonis? 
+A1. Set multiple Variables 
+B. Table Aggregator 
+C. Increment Function
+
+20) Action Flows adhere to the authentication and authorization principles implemented within the API of the third-party application. This is to ensure that each call to that third-party API is capable of 
+A. Integrating or splitting information in a secure and auditable manner 
+B. Verifying or rejecting information in a secure and auditable manner 
+C1. Pulling or pushing information in a secure and auditable manner
+
+21) Directives in celonis are special types of modules that are only executed when: 
+A1. An error occurs. 
+B. An error handler has failed. 
+C. A Runtime Error type occurs.
+
+22) What must be provided to a Webhook module to make it possible for Celonis to listen for incoming data? 
+A. Client secret and Client User 
+B1. URL address 
+C. APIs for POST calls
+
+23) A workflow should trigger every time a new notification is received. Which type of trigger makes this possible in celonis? 
+A. A polling trigger 
+B1. An instant trigger 
+C. An http trigger
+
+24) An Analyst needs to automatically remove the payment block for all blocked orders in the source system using Robotic Processing Automation. What Action Flow must be implemented in celonis 
+A. Query Data Model - Trigger bot - Router - Remove payment block 
+B1. Query Data Model - Router - Trigger bot - Remove payment block 
+C. Query Data Model - Remove payment block - Trigger bot
+
+25) An Action Flow is supposed to send emails to three countries. The date format in the 3 different email modules should be adjusted for each country. How can the Analyst achieve this in celonis? 
+A. By adding the country value in each each email module 
+B. By creating three separate Action Flows with a different country setting active 
+C1. By using a date function directly in the email modules
+
+26) An Action Flow is set up using a Google Sheets Module and a Gmail module. It is intended to send an email once data is added to the Google Sheet but this error has occurred. What can the Analyst do to resolve the error? 
+A. Add an Ignore directive with an error handling module 
+B. Remove the Gmail module and save the Action Flow 
+C.1 Review the output of the Google Sheets module
+
+27) An Analyst used a Webhook for a payment workflow. It resulted in a 400 response. What custom webhook response can the Analyst use? 
+A. In progress. Your transaction is being processed. 
+B. Success. This action is completed. 
+C. 1Invalid. There was an error with the payment information you submitted.
+
+28) How can Analysts include templates or blueprints into an Action Flow? Select TWO options. A. Access the tool module for Blueprints 
+B.1 Access templates via the Marketplace 
+C. Add the template module in editor mode 
+D.1 Import blueprint in editor mode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Build Views
+1. What is a key benefit of the Knowledge Model in relation to the View for Analysts?
+A1. It makes data more accessible and human-readable.
+B. It provides real-time data loads to the View.
+C. It stores all the visual components of the View.
+2. What is the purpose of interactive mode in Views?
+A1.To test and validate the entire View
+B.To enable collaborative editing between multiple Analysts simultaneously
+C.To export the data in Views to external formats
+3. Which level of filtering requires Analysts to apply filters using the Knowledge Model?
+A.View Level B1.Package Level C.Component Level
+4. Which of the following actions can Analysts perform on components within a View? Select TWO options.
+A. Send to B. Share C. Rotate D1. Delete E1. Duplicate
+5. There is a Package containing a dashboard, created using a View and Knowledge Model, that has been published with version 1.0.0. An Analyst subsequently creates another dashboard with a different use case utilizing the same Knowledge Model within the Package. How should the Analyst version the Package when publishing it?
+A.	1    1.1.0  B. 1.0.1  C. 2.0.0 
+
+6. In the PQL Editor, where can an Analyst save previously-created knowledge to the Knowledge Model?
+A1.Metadata B. PQL reference library C. Knowledge sidebar
+7. A Business User needs to see a chart containing the customer satisfaction rate and the total number of purchase orders, per month, over the past year. Which dimension should the Analyst select?
+A1. Creation Time (values: dates and time)
+B. Net Amount (values: monetary value of invoices)
+C. Creation Execution Type (values: manual or automatic)
+8. Which of the following actions can Analysts perform in the tab settings in a View? Select TWO options.
+A. Manage permissions B. Change Knowledge Model C1. Change layout D1. Duplicate E. Change tab key
+9. Where can an Analyst create a Data Model Variable in Studio?
+A.In the Space settings B. In the View settings C1. In the Package settings
+10. Which layout should an Analyst choose to make a View bigger to add more components?
+A.Adaptive mode B1.Custom height C.Scale-to-fit
+11. Which Asset would an Analyst use to build visual interfaces with operational capabilities tailored for business roles?
+A1.View B.Analysis C.Simulation
+12. How can the layout of a table component be optimized to provide Business Users with access to more information at a glance?
+A1.By decreasing the cell spacing and making the table more compact
+B.By increasing the font size of the text within the table cells
+C.By increasing the number of data included in the table
+
+13.Which of the following are filter components? Select TWO options.
+A. Process Explorer B. Attribute List C. Date range D.1Filter dropdown E1. Input dropdown
+
+14. How does the Knowledge Model specify data from the Data Model?
+A.Through the use of Structured Query Language (SQL)
+B1.Through the use of Process Query Language (PQL)
+C.Through the use of YAML Ain't Markup Language (YAML)
+15. An Analyst has been tasked to create a filter that applies to all tabs and components within a View and can be configured by Business Users in Apps. Which type of filter should the Analyst set up to achieve this?
+A. Tab filter B.View filter C1.Global filter
+16. How can an Analyst save metrics they've created in a View?
+A. Using the PQL Editor B1.Using the Component Setting C. Using the Filter Editor
+17. Why is it important for Views to be connected to a Knowledge Model?
+A1. To ensure consistency of business logic.
+B. To restrict access to sensitive data.
+C. To improve the performance of the View.
+18. Once a metric is saved into the Knowledge Model, where can it be accessed in the View?
+A.In the settings of the components
+B.In the PQL reference library of the PQL Editor
+C1.In the knowledge sidebar of the PQL and Filter Editors
+19. In the PQL Editor, what does "unlink" the knowledge sync refer to?
+A.Exporting reusable knowledge to external databases
+B1.Enabling local customization of the reusable knowledge
+C. Associating reusable knowledge with other Views
+
+20. In the PQL Editor, what option can an Analyst choose to set a simple attribute filter on a component without needing to code in PQL?
+A. Structured input B1.Filter input C. PQL input
+21. How do Views pull data from the Data Model? Select TWO options.
+A1. From the Data Model itself
+B. Through the Process Adherence Manager
+C. From intergrating APIs in the View
+D. Through external systems synchonization
+E1. Through Knowledge Model Entities
+
+22. An Analyst is tasked with designing a dashboard to monitor their project management metrics for the fiscal year. Which component is best suited for that purpose?
+A. Pie chart B. Table C1.KPI List
+23. An Analyst has granted the "Package User" template permission in a Space to a Business User. As a result, which of the following permissions is granted to the Business User?
+A. Edit all packages B. Create packages C1. Use all packages
+24. Where can an Analyst change the Knowledge Model linked to the View?
+A. Component Settings B. Package Settings C1. View Settings
+25.What is the primary purpose of (horizontal) bar charts? 
+A. To display hierarchical data structures 
+B1. To compare multiple categories of data 
+C. To represent trends over time
+
+
+
+
+
+
+Build Action Flows
+
+1)An Action Flow should retrieve a specific customer’s sales order numbers and delivery dates from a data model. Which module should the Analyst select to achieve this? 
+A. Celonis Update Augmented Attribute 
+B. Celonis Get Tasks 
+C. 1Celonis Query Data
+
+2)Which features should an Analyst implement between the Router module and the subsequent module so that the action is routed for only specific data? 
+A. 1Filters and Conditions 
+B. Filters and Versions 
+C. Filters and Joins
+
+3)What does a ConnectionError type indicate in celonis? 
+A. An aggregator module has failed to connect to the preceding Action Flow modules 
+B. An item is incorrectly mapped and does not pass the validation 
+C. 1A third-party service is unavailable
+
+4)An Action Flow with an HTTP module is required to create a new user account. What method can the Analyst use in the HTTP module in celonis? 
+A. FILTER B. GET C. 1POST
+
+5)A business user would like to receive a Slack notification each time an update is made to a specified slide in a presentation deck. What can the Analyst do to achieve this in celonis? 
+A. Use a get presentation module 
+B. Use a watch presentations module 
+C. 1Use a webhook module
+6)What does the Analyst use to validate incoming data when using webhooks in celonis?
+ A. Action Flow Logs B.1 Data structure C. Data output
+
+7)What is the purpose of an Iterator module? 
+A. Branch the Action Flow into several routes and process the data within each route differently 
+B. Converge the Action Flow from several routes and process the data at the same time 
+C. 1Split an incoming array into a series of bundles that can be processed separately in the remaining Action Flow
+
+8)What does a Break Directive enable an Analyst to do? Select TWO options. 
+A. 1To resolve incomplete executions 
+B. 1To ignore incomplete executions 
+C. To break incomplete executions into parts 
+D. To capture incomplete executions
+
+9)An Action Flow is set up to receive multiple bundles of data and then merge them into a single bundle. Which module type makes this possible in celonis? 
+A. Iterator B. Converger C. 1Aggregator
+
+10)Certain data bundles from a module should be ignored and not be further processed in an Action Flow. How can the Analyst achieve this in celonis? 
+A. With a Sleep module B. 1With an Ignore directive C. With a Filter
+
+11)A webhook receives data in the form of JSON payloads - what does this payload contain in celonis? 
+A. 1Key value pairs B. Data structure C. Data validation
+
+12) In Action Flows, what distinguishes polling triggers from instant triggers in celonis? 
+A. 1Polling triggers run according to a predefined schedule 
+B. Polling triggers rely on scheduled webhook events 
+C. Polling triggers start running in real-time once a particular event takes place
+
+13) What type of tasks are appropriate use cases for implementing automation in celonis? 
+A. 1Tasks currently performed manually 
+B. Tasks that do not follow a set workflow 
+C. Tasks that are not repetitive
+
+14) What does an Analyst need to do prior to automating actions in on-prem systems? 
+A. Install Celonis Extractor 
+B. Install Celonis Add-on 
+C. 1Install Celonis On-prem clients / Agent
+
+15) In which HTTP modules does the Analyst allow the input of credentials? Select TWO options. 
+A. 1HTTP Make a Basic Auth Request 
+B. HTTP Retrieve Headers 
+C. HTTP Get a file 
+D.1 HTTP Make a Client Certificate Auth Request
+
+16) How can an Analyst automatically create new users in a database with data received through a webhook module? 
+A. 1Using an HTTP module, sending a POST request 
+B. Using the custom header items of a webhook response module 
+C. Using a watch row module of the corresponding database
+
+17) An Action Flow is set up and one of the modules has an error. The Analyst wants to stop the execution immediately when an error occurs and mark the status as error. Which error handling module achieves this? 
+A. Resume Directive 
+B. Break Directive -> chatgpt 
+C. 1Rollback Directive -> I marked this 
+
+18) An Analyst notices that some bundles in the execution of an Action Flow have not been processed in all modules as expected, however the execution status is marked as success. Which error handling module is causing this? 
+A. Retry Directive 
+B. Resume Directive 
+C. 1Ignore Directive
+
+19) An Analyst must set up an Action Flow to store a calculated value for later use in more than one module. Which tool should the Data Analyst use when the formula used to calculate this value is overly complex in celonis? 
+A. 1Set multiple Variables 
+B. Table Aggregator 
+C. Increment Function
+
+20) Action Flows adhere to the authentication and authorization principles implemented within the API of the third-party application. This is to ensure that each call to that third-party API is capable of 
+A. Integrating or splitting information in a secure and auditable manner 
+B. Verifying or rejecting information in a secure and auditable manner 
+C. 1Pulling or pushing information in a secure and auditable manner
+
+21) Directives in celonis are special types of modules that are only executed when: 
+A. 1An error occurs. 
+B. An error handler has failed. 
+C. A Runtime Error type occurs.
+
+22) What must be provided to a Webhook module to make it possible for Celonis to listen for incoming data? 
+A. Client secret and Client User 
+B. 1URL address 
+C. APIs for POST calls
+
+23) A workflow should trigger every time a new notification is received. Which type of trigger makes this possible in celonis? 
+A. A polling trigger 
+B. 1An instant trigger 
+C. An http trigger
+
+24) An Analyst needs to automatically remove the payment block for all blocked orders in the source system using Robotic Processing Automation. What Action Flow must be implemented in celonis 
+A. Query Data Model - Trigger bot - Router - Remove payment block 
+B.1 Query Data Model - Router - Trigger bot - Remove payment block 
+C. Query Data Model - Remove payment block - Trigger bot
+
+25) An Action Flow is supposed to send emails to three countries. The date format in the 3 different email modules should be adjusted for each country. How can the Analyst achieve this in celonis? 
+A. By adding the country value in each each email module 
+B. By creating three separate Action Flows with a different country setting active 
+C.1 By using a date function directly in the email modules
+
+26) An Action Flow is set up using a Google Sheets Module and a Gmail module. It is intended to send an email once data is added to the Google Sheet but this error has occurred. What can the Analyst do to resolve the error? 
+A. Add an Ignore directive with an error handling module 
+B. Remove the Gmail module and save the Action Flow 
+C.1 Review the output of the Google Sheets module
+
+27) An Analyst used a Webhook for a payment workflow. It resulted in a 400 response. What custom webhook response can the Analyst use? 
+A. In progress. Your transaction is being processed. 
+B. Success. This action is completed. 
+C. 1Invalid. There was an error with the payment information you submitted.
+
+28) How can Analysts include templates or blueprints into an Action Flow? Select TWO options. A. Access the tool module for Blueprints 
+B.1 Access templates via the Marketplace 
+C. Add the template module in editor mode 
+D.1 Import blueprint in editor mode
+
+
+Build Action Flows- My dumps
